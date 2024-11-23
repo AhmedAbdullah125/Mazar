@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import hero from '/public/hero.jpg'
 // import iPhones from '/public/iPhones.svg'
-import iPhones from '../../assets/images/iPhnes.svg'
+import iPhones from '../../assets/images/iPhones.svg'
 import translate from '/public/translate.png'
 import pin from '/public/pin.png'
 import { AudioLines } from 'lucide-react';
