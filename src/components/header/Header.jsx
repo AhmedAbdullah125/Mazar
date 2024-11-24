@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container m-auto flex items-center gap-2 justify-between">
-        <Image src={logo} alt="logo" className="logo-img" />
+        <Link href="/"> <Image src={logo} alt="logo" className="logo-img" /></Link>
         <div className="links">
           <Link href="/">Home</Link>
           <Link href="/#paths">Paths</Link>

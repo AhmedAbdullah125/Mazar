@@ -17,8 +17,8 @@ export default function AppExplore() {
                     <div className="l-side" >
                         <h2 className='font-bold text-[#141414]'>Enjoy full experience with our app</h2>
                         <p className="text-2xl font-medium mb-4 text-[#5A5A5A]">Unlock the full potential of our app today! Book trips seamlessly, access engaging content, and enjoy even more features designed to make your experience smooth and enjoyable</p>
-                        <Image src={google} alt="Mazar" className="img" />
-                        <Image src={apple} alt="Mazar" className="img" />
+                        <Link href="/"><Image src={google} alt="Mazar" className="img" /></Link>
+                        <Link href="/"><Image src={apple} alt="Mazar" className="img" /></Link>
                     </div>
 
                 </div>

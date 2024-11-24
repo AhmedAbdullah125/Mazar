@@ -1,12 +1,18 @@
-
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import hero from '/public/hero.jpg'
-import iPhones from '/public/iPhones.png'
-// import iPhones from '../../assets/images/iPhones.svg'
+import iPhones from '/public/iPhones.svg'
 import translate from '/public/translate.png'
 import pin from '/public/pin.png'
 import { AudioLines } from 'lucide-react';
+import { motion } from 'framer-motion';
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip"
 export default function Hero() {
 
     return (
@@ -17,25 +23,53 @@ export default function Hero() {
                         <div className="hero-text">
                             <h1>Explore <span>Mecca</span> with us !</h1>
                             <p>Explore Mecca with us !</p>
-                            <Link href={"/book"} className='hero-book-btn'>Boook Now</Link>
+                            <Link href="/#paths" className='hero-book-btn'>Boook Now</Link>
                         </div>
                         <div className="iPhones">
                             <Image src={iPhones} alt="Mazar" className="iphones-img" />
                         </div>
                     </div>
                     <div className="features container m-auto">
-                        <div className="feature">
+
+                        <motion.div
+                          initial={{ opacity: 0, y: -100 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            type: 'spring',
+                            bounce: 0.2,
+                            duration: .2,
+                          }}
+                          viewport={{ once: true }}
+                          className="feature"
+                          >
                             <AudioLines size={48}  color="#025AB4"/>
                             <p>Intelligent voice guidance</p>
-                        </div>
-                        <div className="feature">
+                        </motion.div>
+                        <motion.animatediv
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          type: 'spring',
+                          bounce: 0.2,
+                          duration: .3,
+                        }}
+                        viewport={{ once: true }}
+                        className="feature">
                             <Image src={translate} alt="Mazar" className=" h-12" />
                             <p>Intelligent voice guidance</p>
-                        </div>
-                        <div className="feature">
+                        </motion.animatediv>
+                        <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          type: 'spring',
+                          bounce: 0.2,
+                          duration: .9,
+                        }}
+                        className="feature">
                             <Image src={pin} alt="Mazar" className=" h-12" />
                             <p>Intelligent voice guidance</p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
