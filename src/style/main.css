@@ -1485,6 +1485,23 @@ footer .footer-cont .social {
 .book-main-page .book-cont .form form div {
   width: 100%;
 }
+.book-main-page .book-cont .form form .captcha {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.book-main-page .book-cont .form form .captcha div {
+  width: auto;
+}
+.book-main-page .book-cont .form form .captcha .captcha-text {
+  color: #ef4444;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
 .book-main-page .book-cont .form label {
   font-size: 15px;
   font-weight: 700;

@@ -1,6 +1,6 @@
 .book-main-page {
     position: relative;
-
+    
     .overlay {
         background-color: rgba(0, 0, 0, 0.7);
         position: absolute;
@@ -56,6 +56,23 @@
 
                 div {
                     width: 100%;
+                }
+                .captcha{
+                    padding-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: center;
+                    justify-content: center;
+                    padding-bottom: 40px;
+                    div{
+                        width: auto;
+                    }
+                    .captcha-text{
+                        color: #ef4444;
+                        font-weight: 500;
+                        font-size: .8rem;
+                    }
                 }
             }
 

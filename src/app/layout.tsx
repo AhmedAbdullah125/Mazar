@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" id='root'>
-      <body className="w-full">
+      <body className="w-full" suppressHydrationWarning={true}>
         <Header />
         {children}
         <Footer />
