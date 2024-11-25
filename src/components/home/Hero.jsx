@@ -66,6 +66,7 @@ export default function Hero() {
                           bounce: 0.2,
                           duration: .9,
                         }}
+                        viewport={{ once: true }}
                         className="feature">
                             <Image src={pin} alt="Mazar" className=" h-12" />
                             <p>Intelligent voice guidance</p>

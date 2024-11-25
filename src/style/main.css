@@ -1482,6 +1482,9 @@ footer .footer-cont .social {
   align-items: flex-end;
   width: 100%;
 }
+.book-main-page .book-cont .form form div {
+  width: 100%;
+}
 .book-main-page .book-cont .form label {
   font-size: 15px;
   font-weight: 700;
@@ -1495,12 +1498,36 @@ footer .footer-cont .social {
   padding: 15px 24px;
   height: 55px;
   width: 100%;
+  border-radius: 2px;
+  border: 1px solid #e3e3e3;
+  background-color: #F9F9F9;
 }
-.book-main-page .book-cont .form button {
+.book-main-page .book-cont .form .date-picker {
+  border: 1px solid #e3e3e3;
+  padding: 8px 24px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  background-color: #F9F9F9;
+  height: 55px;
+}
+.book-main-page .book-cont .form .form-message {
+  margin-bottom: 18px;
+}
+.book-main-page .book-cont .form .submit {
   padding: 15px 24px;
   border-radius: 5px;
   background-color: var(--main-color);
   color: var(--white-color);
+}
+.book-main-page .book-cont .form .date-btn {
+  text-align: start;
+  color: #0A0A0A;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #F9F9F9;
 }
 
 @media (max-width: 767px) {

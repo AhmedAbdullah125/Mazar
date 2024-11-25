@@ -29,6 +29,7 @@ export default function Form() {
                 </label>
                 <button type='submit' className='submit'>Submit</button>
             </form>
+            
         </div>
     );
 }

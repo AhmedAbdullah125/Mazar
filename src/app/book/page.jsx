@@ -2,6 +2,7 @@ import React from 'react';
 import bg from '/public/bg.png';
 import MazarInfo from '../../components/book/MazarInfo';
 import Form from '../../components/book/Form';
+import FormPage from '../../components/book/FormPage';
 
 export default function Book() {
   return (
@@ -10,7 +11,8 @@ export default function Book() {
         <div className="container m-auto">
             <div className="book-cont">
             <MazarInfo></MazarInfo>
-            <Form></Form>
+            <FormPage></FormPage>
+            {/* <Form></Form> */}
             </div>
         </div>
     </div>

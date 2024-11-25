@@ -16,7 +16,7 @@ export default function Header() {
           <Link href="/">Home</Link>
           <Link href="/#paths">Paths</Link>
           <Link href="/#about">About</Link>
-          <Link href="/#Book" className='book-link' >Book now</Link>
+          <Link href="/#paths" className='book-link' >Book now</Link>
         </div>
 
         <Menu className='menu-bars' onClick={() => {
@@ -34,7 +34,7 @@ export default function Header() {
             <Link href="/">Home</Link>
             <Link href="/#paths">Paths</Link>
             <Link href="/#about">About</Link>
-            <Link href="/#Book" className='book-link' >Book now</Link>
+            <Link href="/#paths" className='book-link' >Book now</Link>
           </div>
         </div>
       </div>
