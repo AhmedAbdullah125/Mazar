@@ -357,13 +357,6 @@ export default function FormPage() {
                         )}
                     /> */}
                      <ReCAPTCHA  sitekey="6Ldg4IYqAAAAALeNzPSeWjABavP4vPJykJPoVFwY" onChange={onChange}/>
-                     <button class="g-recaptcha"
-    data-sitekey="6Ldg4IYqAAAAALeNzPSeWjABavP4vPJykJPoVFwY"
-    data-callback='onSubmit'
-    data-action='submit'>
-  Submit
-</button>
-
                     <Button type="submit" className='text-xl py-4 rounded-xl min-w-32 h-13 submit'>Submit</Button>
                 </form>
             </Form>
