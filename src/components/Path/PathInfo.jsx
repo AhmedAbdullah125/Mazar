@@ -23,7 +23,7 @@ export default function PathInfo() {
     <div className='container m-auto path'>
       <div className="pathHead">
         <h1>{path.name} </h1>
-        <Link href="/Book" className='book-link' >Book now</Link>
+        <Link href="/book" className='book-link' >Book now</Link>
       </div>
       <div className="pathdata">
         <div className="imgs w-full">

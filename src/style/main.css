@@ -954,6 +954,15 @@ footer .footer-cont .social {
   }
 }
 @media (max-width: 767px) {
+  .genGeb .genSection {
+    padding: 20px;
+  }
+  .genGeb .genSection .l-side {
+    width: 100%;
+  }
+  .genGeb .genSection .img-cont {
+    width: 100%;
+  }
   .hero .overlay .features {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -1286,12 +1295,15 @@ footer .footer-cont .social {
 }
 
 .destinations {
-  background-color: #F4F4F4;
-  padding: 24px;
-  border-radius: 13px;
   margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
 }
 .destinations .destinations-drid {
+  border-radius: 13px;
+  padding: 24px;
+  background-color: #F4F4F4;
   display: grid;
   gap: 10px;
   align-items: flex-start;
@@ -1333,10 +1345,42 @@ footer .footer-cont .social {
   color: #3C3C3C;
   margin-bottom: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 6P;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.destinations .ready {
+  display: flex;
+  padding: 24px;
+  border-radius: 30px;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(2, 90, 180, 0.2);
+}
+.destinations .ready h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #141414;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.destinations .ready p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4D4D4D;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.destinations .ready a {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: #FFFAFA;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -1349,8 +1393,12 @@ footer .footer-cont .social {
     gap: 40px;
   }
   .destinations .destinations-drid {
+    order: 2;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+  }
+  .destinations .ready {
+    order: 1;
   }
 }
 @media (max-width: 767px) {
@@ -1364,6 +1412,15 @@ footer .footer-cont .social {
   .path .activities .activities-grid .activity-cont img {
     width: 50%;
   }
+  .path .pathHead h1 {
+    color: #141414;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  .path .pathHead a {
+    padding: 10px 20pxf;
+  }
   .path .pathdata .places {
     padding: 12px;
   }
@@ -1372,5 +1429,85 @@ footer .footer-cont .social {
   }
   .path .pathdata .places .places-grid .place-cont img {
     width: 50%;
+  }
+}
+.book-main-page {
+  position: relative;
+}
+.book-main-page .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+.book-main-page .book-cont {
+  display: flex;
+  gap: 100px;
+  padding-top: 73px;
+  padding-bottom: 73px;
+  min-height: calc(100vh - 189px);
+}
+.book-main-page .book-cont .MazarInfo {
+  z-index: 2;
+}
+.book-main-page .book-cont .MazarInfo img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.book-main-page .book-cont .MazarInfo h2 {
+  color: var(--white-color);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.book-main-page .book-cont .MazarInfo p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #E6E6E6;
+  margin-bottom: 40px;
+}
+.book-main-page .book-cont .form {
+  background-color: var(--white-color);
+  z-index: 2;
+  border-radius: 15px;
+  padding: 24px;
+}
+.book-main-page .book-cont .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+.book-main-page .book-cont .form label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0A0A0A;
+  width: 100%;
+}
+.book-main-page .book-cont .form input {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  box-shadow: none;
+  padding: 15px 24px;
+  height: 55px;
+  width: 100%;
+}
+.book-main-page .book-cont .form button {
+  padding: 15px 24px;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+@media (max-width: 767px) {
+  .book-main-page {
+    position: relative;
+  }
+  .book-main-page .book-cont {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=main.css.map */

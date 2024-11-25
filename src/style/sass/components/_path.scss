@@ -292,12 +292,15 @@
 }
 
 .destinations {
-    background-color: #F4F4F4;
-    padding: 24px;
-    border-radius: 13px;
     margin-bottom: 56px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    
     .destinations-drid {
+        border-radius: 13px;
+        padding: 24px;
+        background-color: #F4F4F4;
         display: grid;
         gap: 10px;
         align-items: flex-start;
@@ -341,12 +344,48 @@
                     color: #3C3C3C;
                     margin-bottom: 0;
                     display: -webkit-box;
-                    -webkit-line-clamp: 6P;
+                    -webkit-line-clamp: 6;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
             }
+        }
+    }
+
+    .ready {
+        display: flex;
+        padding: 24px;
+        border-radius: 30px;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(2, 90, 180, 0.2);
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #141414;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4D4D4D;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        a {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 5px;
+            background-color: $main;
+            color: #FFFAFA;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
         }
     }
 }
@@ -365,10 +404,17 @@
         }
     }
 
-    .destinations .destinations-drid {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+    .destinations {
+        .destinations-drid {
+            order: 2;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+        .ready{
+            order: 1;
+        }
     }
+
 }
 
 @media (max-width: 767px) {
@@ -385,6 +431,21 @@
                         width: 50%;
                     }
                 }
+            }
+        }
+
+        .pathHead {
+
+
+            h1 {
+                color: #141414;
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 0;
+            }
+
+            a {
+                padding: 10px 20pxf;
             }
         }
 

@@ -58,6 +58,11 @@ export default function PathInfo() {
                     </div>
                 </div>
             </div>
+            <div className="ready">
+                <h2>Ready to start your journey now </h2>
+                <p>contact us and book your trip </p>
+                <Link href={'/book'}>Book now</Link>
+            </div>
         </div>
     );
 }

@@ -573,6 +573,15 @@ footer {
 }
 
 @media (max-width: 767px) {
+    .genGeb .genSection{
+        padding: 20px;
+        .l-side{
+            width: 100%;
+        }
+        .img-cont{
+            width: 100%;
+        }
+    }
     .hero {
         .overlay {
             .features {
