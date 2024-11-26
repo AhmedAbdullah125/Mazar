@@ -1311,6 +1311,14 @@ footer .footer-cont .social {
   flex-direction: column;
   gap: 56px;
 }
+.destinations .show-more {
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
 .destinations .destinations-drid {
   border-radius: 13px;
   padding: 24px;
@@ -1332,6 +1340,12 @@ footer .footer-cont .social {
      object-fit: cover;
   border-radius: 20px;
   overflow: hidden;
+}
+.destinations .destinations-drid .destination .img-cont img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .destinations .destinations-drid .destination .text {
   width: 100%;

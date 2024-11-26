@@ -9,6 +9,7 @@ import img4 from '/public/fly.png';
 import img5 from '/public/mount.png';
 import img6 from '/public/wall.png';
 import { Fancybox } from "@fancyapps/ui";
+import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { Cable, Milk, Wifi } from 'lucide-react';
 export default function PathInfo() {
@@ -58,10 +59,21 @@ export default function PathInfo() {
           <div className="places-grid">
             {
               path.imgs.map((img, index) =>
-                <div className="place-cont" key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: -100 }} // Initial animation state (faded and shifted left)
+                  whileInView={{ opacity: 1, y: 0 }} // Animation state when in view (fully visible and reset position)
+                  viewport={{ once: true ,amount: 0.8}}
+                  transition={{
+                    delay: index * 0.2,
+                    type: 'spring', // Using spring animation for smooth motion
+                    bounce: 0.2, // Small bounce effect for the animation
+                    duration: .3, // Duration of the animation
+
+                  }}
+                  className="place-cont" key={index}>
                   <Image src={img.img} alt="Mazar" />
                   <p>{img.name}</p>
-                </div>
+                </motion.div>
               )
             }
           </div>
@@ -98,10 +110,21 @@ export default function PathInfo() {
         <div className="activities-grid">
           {
             activities.map((activity, index) =>
-              <div className="activity-cont" key={index}>
+              <motion.div
+                  initial={{ opacity: 0, y: -50 }} // Initial animation state (faded and shifted left)
+                  whileInView={{ opacity: 1, y: 0 }} // Animation state when in view (fully visible and reset position)
+                  viewport={{ once: true ,amount: 0.8}}
+                  transition={{
+                    delay: index * 0.2,
+                    type: 'spring', // Using spring animation for smooth motion
+                    bounce: 0.2, // Small bounce effect for the animation
+                    duration: .3, // Duration of the animation
+
+                  }}
+                   className="activity-cont" key={index}>
                 <Image src={activity.img} alt="Mazar" />
                 <p>{activity.name}</p>
-              </div>
+              </motion.div>
             )
           }
         </div>
