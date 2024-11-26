@@ -429,6 +429,9 @@ header .menu-bars {
   display: none;
   cursor: pointer;
 }
+header .menu-bars a {
+  width: 100%;
+}
 header .hidden {
   display: none;
 }
@@ -510,6 +513,9 @@ header .side-menu-active {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+.hero .overlay .welcome .iPhones img {
+  animation: dance 2s infinite alternate;
 }
 .hero .overlay .hero-text {
   display: flex;
@@ -801,7 +807,14 @@ html {
   margin-bottom: 0;
   line-height: 1.7;
 }
-
+@keyframes dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-11deg);
+  }
+}
 .genGeb {
   background-color: rgba(252, 252, 252, 0.9);
 }

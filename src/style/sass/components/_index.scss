@@ -26,6 +26,11 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            .iPhones{
+                img{
+                    animation: dance 2s infinite alternate
+                }
+            }
         }
 
         .hero-text {
@@ -374,7 +379,22 @@ html {
 
     }
 }
-
+@-webkit-keyframes dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-11deg);
+  }
+}
+@keyframes dance {
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-11deg);
+      }
+}
 .genGeb {
     background-color: rgba(252, 252, 252, 0.9);
 

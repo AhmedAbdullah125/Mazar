@@ -47,6 +47,9 @@ header {
     .menu-bars{
         display: none;
         cursor: pointer;
+        a{
+            width: 100%;
+        }
     }
     .hidden{
         display: none;
