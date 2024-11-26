@@ -1446,17 +1446,53 @@ footer .footer-cont .social {
     width: 50%;
   }
 }
-.book-main-page {
+body {
   position: relative;
+}
+
+.book-main-page .popup {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.book-main-page .popup .popup-cont {
+  padding: 35px 40px;
+  border-radius: 20px;
+  background-color: var(--white-color);
+  display: flex;
+  margin-bottom: 350px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1100px;
+}
+.book-main-page .popup .popup-cont img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+}
+.book-main-page .popup .popup-cont h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 20px;
+}
+.book-main-page .popup .popup-cont p {
+  width: 100%;
+  background-color: #E0FEE0;
+  color: var(--black-color);
+  font-size: 32px;
+  font-weight: 600;
+  padding: 20px 40px;
 }
 .book-main-page .overlay {
   background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1;
 }
 .book-main-page .book-cont {
   display: flex;
@@ -1565,6 +1601,9 @@ footer .footer-cont .social {
 @media (max-width: 767px) {
   .book-main-page {
     position: relative;
+  }
+  .book-main-page .popup .popup-cont {
+    margin-bottom: 150px;
   }
   .book-main-page .book-cont {
     flex-direction: column;

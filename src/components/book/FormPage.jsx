@@ -8,6 +8,7 @@ import { z } from 'zod';
 import validator from "validator";
 import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 import {
     Form,
     FormControl,
@@ -28,7 +29,17 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
-export default function FormPage() {
+export default function FormPage(props) {
+    const router = useRouter()
+
+
+
+
+
+
+    let setDone = props.setDone;
+    console.log(props);
+
     const [date, setDate] = useState(new Date());
     const [visited, setVisited] = useState(false);
     const [captchaa, setCaptchaa] = useState(false);
@@ -79,6 +90,15 @@ export default function FormPage() {
         setVisited(true);
         if (captchaa) {
             console.log(data);
+            setDone(true);
+            document.querySelector('html').style.overflow = 'hidden';
+            const interval = setInterval(() => {
+                setDone(false);
+                document.querySelector('html').style.overflow = 'auto';
+                router.push('/');
+                clearInterval(interval);
+            }, 300000);
+
         }
     };
     return (
@@ -370,8 +390,8 @@ export default function FormPage() {
                         )}
                     /> */}
                     <div className='captcha'>
-                        <ReCAPTCHA sitekey="6Lc3A4oqAAAAALKG0Ww3vyaaIdmMWIAjXIi6xvoa" onChange={onChange}/>
-                        <p className={`${!captchaa&&visited ? 'block' : 'hidden'} captcha-text`}>Please verify that you are not a robot</p>
+                        <ReCAPTCHA sitekey="6Lc3A4oqAAAAALKG0Ww3vyaaIdmMWIAjXIi6xvoa" onChange={onChange} />
+                        <p className={`${!captchaa && visited ? 'block' : 'hidden'} captcha-text`}>Please verify that you are not a robot</p>
                     </div>
 
                     <Button type="submit" className='text-xl py-4 rounded-xl min-w-32 h-13 submit'>Submit</Button>
