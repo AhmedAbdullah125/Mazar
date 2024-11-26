@@ -1632,6 +1632,9 @@ body {
   .book-main-page .popup .popup-cont {
     margin-bottom: 150px;
   }
+  .book-main-page .popup .popup-cont p {
+    font-size: 16px;
+  }
   .book-main-page .book-cont {
     flex-direction: column;
   }

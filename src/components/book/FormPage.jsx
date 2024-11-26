@@ -97,7 +97,7 @@ export default function FormPage(props) {
                 document.querySelector('html').style.overflow = 'auto';
                 router.push('/');
                 clearInterval(interval);
-            }, 300000);
+            }, 3000);
 
         }
     };
