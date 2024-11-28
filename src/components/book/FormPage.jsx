@@ -28,13 +28,13 @@ import {
 } from '@/components/ui/select';
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
- 
+
 import { cn } from "@/lib/utils"
 import { Calendar } from "@/components/ui/calendar"
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
 } from "@/components/ui/popover"
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
 import axios from 'axios';
@@ -70,11 +70,6 @@ export default function FormPage(props) {
     }, []);  // Run this effect whenever the `language` changes
     console.log(data);
     const router = useRouter()
-
-
-
-
-
 
     let setDone = props.setDone;
     console.log(props);
@@ -129,7 +124,7 @@ export default function FormPage(props) {
         setVisited(true);
         if (captchaa) {
             console.log("ffffffff");
-            let formData = `${data.date.getDate()}-${data.date.getMonth()+1}-${data.date.getFullYear()}`;
+            let formData = `${data.date.getDate()}-${data.date.getMonth() + 1}-${data.date.getFullYear()}`;
             // try {
             //     // Call your API with form data
             //     const response = await fetch(`https://mzarapp.com/api/landing/home/booking?customer_name=${data.name}&customer_whatsapp=${data.phone}&package_id=${data.destniation}&package_name=${data.destniation}&booking_date=${formData}`, {
@@ -139,7 +134,7 @@ export default function FormPage(props) {
             //       },
             //       body: JSON.stringify(data),
             //     });
-          
+
             //     const data = await response.json();
             //     console.log('Response from API:', data);
             //   } catch (error) {
@@ -147,8 +142,8 @@ export default function FormPage(props) {
             //   }
 
             console.log(data);
-            
-         
+
+
             setDone(true);
             document.querySelector('html').style.overflow = 'hidden';
             const interval = setInterval(() => {
@@ -375,7 +370,7 @@ export default function FormPage(props) {
                                     <FormItem className=" date-picker">
                                         <Select defaultValue={field.value}>
                                             <FormControl>
-                                            <Popover>
+                                                <Popover>
                                                     <PopoverTrigger asChild>
                                                         <Button
                                                             variant={"outline"}
@@ -399,7 +394,7 @@ export default function FormPage(props) {
                                                 </Popover>
                                             </FormControl>
                                             <SelectContent >
-                                                
+
                                             </SelectContent>
                                         </Select>
                                         <FormMessage className='form-message' />
