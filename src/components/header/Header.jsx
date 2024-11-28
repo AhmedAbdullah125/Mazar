@@ -4,9 +4,9 @@ import logo from '../../assets/images/home/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 export default function Header() {
-  // const router = useRouter()
+  const router = useRouter()
   let [lang, setLang] = useState('');
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -31,15 +31,15 @@ export default function Header() {
             () => {
               if (lang === 'en') {
                 localStorage.setItem('lang', 'ar');
-                // setLang('ar');
-                // router.refresh();
-                // router.refresh();
+                setLang('ar');
+                router.refresh();
+                router.refresh();
 
               }
               else {
                 localStorage.setItem('lang', 'en');
                 setLang('en');
-                // router.refresh(); 
+                router.refresh(); 
               }
             }
           }>{lang==='ar'?'En':'ع'}</div>

@@ -154,7 +154,7 @@ export default function FormPage(props) {
             const interval = setInterval(() => {
                 setDone(false);
                 document.querySelector('html').style.overflow = 'auto';
-                // router.push('/');
+                router.push('/');
                 clearInterval(interval);
             }, 3000);
 
