@@ -2,13 +2,6 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import img1 from '/public/heraa.png';
-import img2 from '/public/mecca.jpg';
-import img3 from '/public/thawr.png';
-import img4 from '/public/fly.png';
-import img5 from '/public/mount.png';
-import img6 from '/public/wall.png';
-import { title } from 'process';
 export default function PathInfo(pathData) {
     let [more, setMore] = useState(false);
     let [data, setData] = useState(pathData.data);

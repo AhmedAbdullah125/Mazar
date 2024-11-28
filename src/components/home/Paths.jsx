@@ -3,12 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import heraa from '/public/heraa.png'
-import mecca from '/public/mecca.jpg'
-import thawr from '/public/thawr.png'
-import fly from '/public/fly.png'
-import mount from '/public/mount.png'
-import wall from '/public/wall.png'
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

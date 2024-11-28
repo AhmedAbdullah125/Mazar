@@ -24,7 +24,7 @@ body {
             margin-bottom: 350px;
             flex-direction: column;
             align-items: center;
-            max-width: 1100px;
+            max-width: 800px;
 
             img {
                 width: 100px;
@@ -163,6 +163,9 @@ body {
                 border-radius: 5px;
                 background-color: $main;
                 color: $white;
+            }
+            .submit:hover {
+                background-color: $sec;
             }
 
             .date-btn {

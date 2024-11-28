@@ -5,12 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import hero from '/public/hero.jpg'
 import iPhones from '/public/iphones.webp'
-import translate from '/public/translate.png'
-import pin from '/public/pin.png'
-import { AudioLines } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Loading from '@/app/loading';
-import { set } from 'date-fns';
 // import {
 //   Tooltip,
 //   TooltipContent,

@@ -1,13 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Hero from '../components/home/Hero';
 import Paths from '../components/home/Paths';
 import About from '../components/home/About';
 import GenSection from '../components/home/GenSection';
 import AppExplore from '../components/home/AppExplore';
-import Link from 'next/link';
-import { set } from 'date-fns';
 
 export default function Home() {
   const [lang, setLang] = useState('en');

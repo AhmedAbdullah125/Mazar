@@ -136,6 +136,7 @@
                 font-weight: 600;
                 color: #4D4D4D;
                 margin-bottom: 24px;
+                text-align: center;
             }
 
             .places-grid {
@@ -149,7 +150,8 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: flex-start;
+                    height: 100%;
                     gap: 15px;
 
                     img {
