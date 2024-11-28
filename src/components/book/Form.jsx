@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from '../../assets/images/home/logo.svg';
-import Image from 'next/image';
 import { Input } from '../ui/input';
 // import ReCAPTCHA from "react-google-recaptcha"
 export default function Form() {

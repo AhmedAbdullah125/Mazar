@@ -7,8 +7,7 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/home/Footer';
 import '../style/main.css';
 // import { Navigation } from 'lucide-react';
-<link rel="stylesheet" href="/css/video-react.css" />
-
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
 export const metadata: Metadata = {
@@ -25,8 +24,8 @@ export default function RootLayout({
     <html lang="en" id='root'>
       <body className="w-full" suppressHydrationWarning={true}>
         <Header />
-        {children}
-        <Footer />
+        <>{children}</>
+        <Footer /> 
       </body>
     </html>
   );

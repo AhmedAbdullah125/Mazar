@@ -1,51 +1,45 @@
 'use client'
-import React, { useRef } from 'react';
+import React, {  useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import img1 from '/public/heraa.png';
-import img2 from '/public/mecca.jpg';
-import img3 from '/public/thawr.png';
-import img4 from '/public/fly.png';
-import img5 from '/public/mount.png';
-import img6 from '/public/wall.png';
 import { Fancybox } from "@fancyapps/ui";
 import { motion } from 'framer-motion'; // Importing the motion component from Framer Motion for animations
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { Cable, Milk, Wifi } from 'lucide-react';
-export default function PathInfo() {
-  let path = { id: 1, name: "heraa path", imgs: [{ id: 1, img: img1, name: "مسجد" }, { id: 2, img: img2, name: "طريق" }, { id: 3, img: img3, name: "متحف" }, { id: 4, img: img4, name: "معرض" }, { id: 5, img: img5, name: "جبل" }, { id: 6, img: img6, name: "مسجد" }] };
-  let facilities = [{ id: 1, name: "Wifi", data: <Wifi color="#0361B5" /> }, { id: 2, name: 'Water', data: <Milk color="#0361B5" /> }, { id: 3, name: "Charging cables", data: <Cable color="#0361B5" /> }]
-  let activities = [{ id: 1, img: img1, name: "مسجد" }, { id: 2, img: img2, name: "طريق" }, { id: 3, img: img3, name: "متحف" }, { id: 4, img: img4, name: "معرض" }, { id: 5, img: img5, name: "جبل" },]
-  const NewsSwiperRef = useRef(null);
+export default function PathInfo(pathData) {
   Fancybox.bind("[data-fancybox]", {
     // Your custom options
   });
+  let [data,setData] = useState(pathData.data);
+  let [language, setLanguage] = useState(data.lang);
+  console.log(data);
+  
   return (
     <div className='container m-auto path'>
       <div className="pathHead">
-        <h1>{path.name} </h1>
-        <Link href="/book" className='book-link' >Book now</Link>
+        <h1>{data.name} </h1>
+        <Link href="/book" className='book-link' >{language === 'en' ? 'Book Now' : 'حجز الان'}</Link>
       </div>
       <div className="pathdata">
         <div className="imgs w-full">
           <div className="imgs-grid">
             {
-              path.imgs.map((img, index) =>
+              data.package_images.map((img, index) =>
                 <div className="img-cont" key={index}>
                   {
                     index == 2 ?
-                      <Image src={img.img} alt="Mazar" />
+                      <Image src={img.image} alt="Mazar"  width={200} height={200}/>
                       :
-                      <a href={img.img.src} data-fancybox="post">
+                      <a href={img.image} data-fancybox="post">
                         <figure>
-                          <Image src={img.img} alt="Mazar" />
+                          <Image src={img.image} alt="Mazar"  width={200} height={200}/>
                         </figure>
                       </a>
 
                   }
                   {
                     index == 2 ?
-                      <div className="rest"><a href={img.img.src} data-fancybox="post">+{path.imgs.length - 2}</a></div>
+                      <div className="rest"><a href={img.image} data-fancybox="post">+{data.package_images.length - 2}</a></div>
                       : null
                   }
                 </div>
@@ -54,11 +48,11 @@ export default function PathInfo() {
           </div>
         </div>
         <div className="places w-full">
-          <h4>During the trip </h4>
-          <p>See the trip content and places you will visit</p>
+          <h4>{language === 'en' ? 'During the trip' : 'خلال الرحلة'}</h4>
+          <p>{language === 'en' ?'See the trip content and places you will visit' : 'شاهد محتوى الرحلة والأماكن التي ستزورها'}</p>
           <div className="places-grid">
             {
-              path.imgs.map((img, index) =>
+              data.locations.map((img, index) =>
                 <motion.div
                   initial={{ opacity: 0, y: -100 }} // Initial animation state (faded and shifted left)
                   whileInView={{ opacity: 1, y: 0 }} // Animation state when in view (fully visible and reset position)
@@ -71,7 +65,7 @@ export default function PathInfo() {
 
                   }}
                   className="place-cont" key={index}>
-                  <Image src={img.img} alt="Mazar" />
+                  <Image src={img.cover} alt="Mazar" width={200} height={200}/>
                   <p>{img.name}</p>
                 </motion.div>
               )
@@ -84,9 +78,9 @@ export default function PathInfo() {
           <h3>Facilities</h3>
           <div className="facilities-cont">
             {
-              facilities.map((facility, index) =>
+              data.services.map((facility, index) =>
                 <div className="facility-cont" key={index}>
-                  {facility.data}
+                  <Image src={facility.image} alt="Mazar" width={200} height={200}/>
                   <p>{facility.name}</p>
                 </div>
               )
@@ -95,21 +89,21 @@ export default function PathInfo() {
         </div>
         <div className="duration w-full">
           <div className="hh">
-            <p className='trip-duration-head'>Trip duration:</p>
-            <p className='trip-duration-title'>2 Hours and 30 minutes</p>
+            <p className='trip-duration-head'>{language === 'en' ? 'Trip duration:' :"مدة الرحلة:"}</p>
+            <p className='trip-duration-title'>{data.duration}</p>
           </div>
           <div className="trip-data">
-            <h4>Best time to visit </h4>
-            <p>From 8:00 am to 3:00pm</p>
+            <h4>{language === 'en' ? 'Best time to visit' : 'وقت الزيارة المفضل'} </h4>
+            <p>{data.best_visit_time}</p>
           </div>
         </div>
       </div>
       <div className="activities">
-        <h5>Activities</h5>
-        <p>See enjoyment in your spiritual journey</p>
+        <h5>{language==='en' ? 'Activities' :'الأنشطة'}</h5>
+        <p>{language === 'en' ? 'See the activities and places you will visit' : 'شاهد النشاطات والأماكن التي ستزورها'}</p>
         <div className="activities-grid">
           {
-            activities.map((activity, index) =>
+            data.in_directions.map((activity, index) =>
               <motion.div
                   initial={{ opacity: 0, y: -50 }} // Initial animation state (faded and shifted left)
                   whileInView={{ opacity: 1, y: 0 }} // Animation state when in view (fully visible and reset position)
@@ -122,7 +116,7 @@ export default function PathInfo() {
 
                   }}
                    className="activity-cont" key={index}>
-                <Image src={activity.img} alt="Mazar" />
+                <Image src={activity.image} alt="Mazar" width={200} height={200}/>
                 <p>{activity.name}</p>
               </motion.div>
             )

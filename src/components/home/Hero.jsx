@@ -55,7 +55,7 @@ export default function Hero() {
                         <div className=" bg-black/50 overlay" >
                             <div className="welcome container m-auto">
                                 <div className="hero-text">
-                                    {language === 'en' ? <h1>Explore <span>Mecca</span> with us !</h1> : <h1>استكشف <span>مكة</span> معنا</h1>}
+                                    {language === 'en' ? <h1>Explore <span>Makkah</span> with us !</h1> : <h1>استكشف <span>مكة</span> معنا</h1>}
                                     <p>{language==='en'?' let us make your Umrah unforgettable':'استمتع معنا بعمرة لا تنسى'} </p>
                                     <Link href="/#paths" className='hero-book-btn'>{language === 'en' ? 'Book Now' :'احجز الان'}</Link>
                                 </div>

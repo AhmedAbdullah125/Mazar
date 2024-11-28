@@ -1,11 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Pause, Play } from 'lucide-react';
 import NumberTicker from '../ui/number-ticker';
-import { useRouter } from 'next/navigation';
 import Loading from '@/app/loading'
 // import vid from '../../assets/images/home/vid.mp4'
 export default function About() {

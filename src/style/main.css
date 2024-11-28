@@ -996,6 +996,10 @@ footer .footer-cont {
   border-top: 1px solid var(--main-color);
   padding-top: 32px;
 }
+footer .footer-cont i {
+  font-size: 24px;
+  color: #025AB4;
+}
 footer .footer-cont .copyRight {
   display: flex;
   align-items: center;
@@ -1363,6 +1367,12 @@ footer .footer-cont .social {
   gap: 7px;
   flex-wrap: nowrap;
   align-items: center;
+}
+.path .facilities-duration .facilities .facility-cont img {
+  width: 30px;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .path .facilities-duration .duration {
   display: flex;

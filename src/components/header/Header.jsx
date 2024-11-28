@@ -24,9 +24,9 @@ export default function Header() {
       <div className="container m-auto flex items-center gap-2 justify-between">
         <Link href="/"> <Image src={logo} alt="logo" className="logo-img" /></Link>
         <div className="links">
-          <Link href="/">Home</Link>
-          <Link href="/#paths">Paths</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/">{lang === 'en' ? 'Home' : 'الرئيسية'}</Link>
+          <Link href="/#paths">{lang === 'en' ? 'Paths' : 'المسارات'}</Link>
+          <Link href="/#about">{lang === 'en' ? 'About' : 'من نحن'}</Link>
           <div className="lang-btn" onClick={
             () => {
               if (lang === 'en') {
@@ -43,7 +43,7 @@ export default function Header() {
               }
             }
           }>{lang==='ar'?'En':'ع'}</div>
-          <Link href="/book" className='book-link' >Book now</Link>
+          <Link href="/book" className='book-link' >{lang === 'en' ? 'Book now' : 'احجز الان'}</Link>
         </div>
         {/* <div className="menu-bars">
           <DropdownMenu>
@@ -76,9 +76,9 @@ export default function Header() {
           document.querySelector('.menu-bars-X').classList.toggle('hidden')
         }}>
           <div className="links">
-            <Link href="/">Home</Link>
-            <Link href="/#paths">Paths</Link>
-            <Link href="/#about">About</Link>
+            <Link href="/">{lang === 'en' ? 'Home' : 'الرئيسية'}</Link>
+            <Link href="/#paths">{lang === 'en' ? 'Paths' : 'المسارات'}</Link>
+            <Link href="/#about">{lang === 'en' ? 'About' : 'من نحن'}</Link>
             <div className="lang-btn" onClick={
             () => {
               if (lang === 'en') {
@@ -95,7 +95,7 @@ export default function Header() {
               }
             }
           }>{lang==='ar'?'En':'ع'}</div>
-            <Link href="/book" className='book-link' >Book now</Link>
+            <Link href="/book" className='book-link' >{lang === 'en' ? 'Book now' : 'احجز الان'}</Link>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'; // Importing React to use JSX syntax and create components.
 import c from '/public/c.svg'
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, X, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -23,9 +23,11 @@ export default function Footer() { // Defining the main functional component nam
                         <p>{language === 'en' ? 'Licensed by the Ministry of Tourism ,license number 73104705':'مرخصة من وزارة السياحة رقم الترخيص 73104705'}</p>
                     </div>
                     <div className="social">
-                        <Link href={'https://www.linkedin.com/'}><Linkedin color='#025AB4'/></Link>
-                        <Link href={'https://www.instagram.com/'}><Instagram color='#025AB4'/></Link>
-                        <Link href={'https://www.facebook.com/'}><Facebook color='#025AB4'/></Link>
+                        <Link href={'https://x.com/mzarapp'}><i className="fa-brands fa-x-twitter"></i></Link>
+                        <Link href={'https://www.instagram.com/mzarapp//'}><i className="fa-brands fa-instagram"></i></Link>
+                        <Link href={'https://www.facebook.com/mzarapp'}><i className="fa-brands fa-facebook"></i></Link>
+                        <Link href={'https://www.youtube.com/@mzarapp'}><i className="fa-brands fa-youtube"></i></Link>
+                        <Link href={'https://www.tiktok.com/@mzarapp'}><i class="fa-brands fa-tiktok"></i></Link>
                     </div>
                 </div>
             </div>

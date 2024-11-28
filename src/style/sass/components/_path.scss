@@ -190,6 +190,11 @@
                 gap: 7px;
                 flex-wrap: nowrap;
                 align-items: center;
+                img{
+                    width: 30px;
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                }
             }
         }
 

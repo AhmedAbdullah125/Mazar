@@ -144,7 +144,7 @@ export default function Paths() {
                                         )}
                                     </Swiper>
                                 </div>
-                                <Link href={`/path/${path.id}`} className='view-detials'>{language==='en'?'View Details':'عرض التفاصيل'} </Link>
+                                <Link href={`/path?id=${path.id}`} className='view-detials'>{language==='en'?'View Details':'عرض التفاصيل'} </Link>
                             </div>
                         </SwiperSlide>
                     )}

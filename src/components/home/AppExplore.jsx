@@ -27,8 +27,8 @@ export default function AppExplore() {
                     <div className={`l-side ${language === 'en' ? 'ltr' : 'rtl'}`} >
                         <h2 className='font-bold text-[#141414]'>{ language === 'en' ? 'Enjoy full experience with our app' : 'استمتع بالتجربة الكاملة مع تطبيقنا'}</h2>
                         <p className="text-2xl font-medium mb-4 text-[#5A5A5A]">{language === 'en' ? 'Unlock the full potential of our app today! Book trips seamlessly, access engaging content, and enjoy even more features designed to make your experience smooth and enjoyable' : 'استخدم إمكانات تطبيقنا الكاملة اليوم! احجز رحلاتك بسلاسة، واحصل على محتوى جذاب، واستمتع بمزيد من الميزات المصممة لجعل تجربتك سلسة وممتعة'}</p>
-                        <Link href="/"><Image src={google} alt="Mazar" className="img" /></Link>
-                        <Link href="/"><Image src={apple} alt="Mazar" className="img" /></Link>
+                        <Link href="https://bitbucket.org/iesnaad_programmer/mzar_leading/src/main/"><Image src={google} alt="Mazar" className="img" /></Link>
+                        <Link href="https://bitbucket.org/iesnaad_programmer/mzar_leading/src/main/"><Image src={apple} alt="Mazar" className="img" /></Link>
                     </div>
 
                 </div>
