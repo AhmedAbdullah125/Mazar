@@ -3,7 +3,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './video-react.css';
-// import NavBar from '@/components/header/NavBar';
+import NavBar from '@/components/header/NavBar';
 import Footer from '@/components/home/Footer';
 import '../style/main.css';
 // import { Navigation } from 'lucide-react';
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" id='root'>
       <body className="w-full" suppressHydrationWarning={true}>
-        {/* <NavBar /> */}
+        <NavBar />
         {children}
         <Footer />
       </body>
