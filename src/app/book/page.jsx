@@ -15,7 +15,6 @@ export default function Book() {
   function handleDone() {
     setDone(false);
     document.querySelector('html').style.overflow = 'auto';
-    console.log(done);
     router.push('/');
     
   }

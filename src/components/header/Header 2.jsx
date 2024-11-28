@@ -1,20 +1,24 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../assets/images/home/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-// import { Button } from "@/components/ui/button"
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu"
+import { useRouter } from 'next/navigation';
 export default function Header() {
-  // const [position, setPosition] = useState("bottom")
+  const router = useRouter()
+  let [lang, setLang] = useState('');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('lang')==='ar'||localStorage.getItem('lang')==='en') {
+        setLang(localStorage.getItem('lang'));
+      }
+      else{
+        localStorage.setItem('lang', 'en');
+        setLang('en');
+      }
+    }
+  }, []);
   return (
     <header className="header">
       <div className="container m-auto flex items-center gap-2 justify-between">
@@ -23,7 +27,23 @@ export default function Header() {
           <Link href="/">Home</Link>
           <Link href="/#paths">Paths</Link>
           <Link href="/#about">About</Link>
-          <Link href="/#paths" className='book-link' >Book now</Link>
+          <div className="lang-btn" onClick={
+            () => {
+              if (lang === 'en') {
+                localStorage.setItem('lang', 'ar');
+                setLang('ar');
+                router.refresh();
+                router.refresh();
+
+              }
+              else {
+                localStorage.setItem('lang', 'en');
+                setLang('en');
+                router.refresh(); 
+              }
+            }
+          }>{lang==='ar'?'En':'ع'}</div>
+          <Link href="/book" className='book-link' >Book now</Link>
         </div>
         {/* <div className="menu-bars">
           <DropdownMenu>
@@ -50,12 +70,32 @@ export default function Header() {
           document.querySelector('.menu-bars').classList.toggle('hidden')
           document.querySelector('.menu-bars-X').classList.toggle('hidden')
         }} />
-        <div className="side-menu">
+        <div className="side-menu" onClick={() => {
+          document.querySelector('.side-menu').classList.toggle('side-menu-active')
+          document.querySelector('.menu-bars').classList.toggle('hidden')
+          document.querySelector('.menu-bars-X').classList.toggle('hidden')
+        }}>
           <div className="links">
             <Link href="/">Home</Link>
             <Link href="/#paths">Paths</Link>
             <Link href="/#about">About</Link>
-            <Link href="/#paths" className='book-link' >Book now</Link>
+            <div className="lang-btn" onClick={
+            () => {
+              if (lang === 'en') {
+                localStorage.setItem('lang', 'ar');
+                setLang('ar');
+                router.refresh();
+                router.refresh();
+
+              }
+              else {
+                localStorage.setItem('lang', 'en');
+                setLang('en');
+                router.refresh(); 
+              }
+            }
+          }>{lang==='ar'?'En':'ع'}</div>
+            <Link href="/book" className='book-link' >Book now</Link>
           </div>
         </div>
       </div>

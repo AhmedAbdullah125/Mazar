@@ -5,7 +5,6 @@ import { Input } from '../ui/input';
 // import ReCAPTCHA from "react-google-recaptcha"
 export default function Form() {
     function onChange(value) {
-        console.log("Captcha value:", value);
     }
     return (
         <div className='w-full form'>

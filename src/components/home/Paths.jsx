@@ -1,6 +1,6 @@
 'use client'
-
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import heraa from '/public/heraa.png'
@@ -14,21 +14,43 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
 export default function Paths() {
-    let paths = [
-        { id: 1, name: "Heraa path", img: heraa, duration: "2 hours and 30 minutes", imgs: [{ id: 1, name: "heraa mountain", img: thawr }, { id: 5, name: "Maccah", img: mecca }, { id: 2, name: "Thawr mountain", img: mount }, { id: 3, name: "Mount wall", img: wall }, { id: 4, name: "Mount From sky", img: fly }], discription: "We take you on a spiritual journey, guiding you through the holy sites starting from Arafat with three hours and 30 minutes of spiritual exploration through the holy sites starting from Arafat with three hours and 30 minutes" },
-        { id: 2, name: "Heraa path", img: mecca, duration: "1 hours and 12 minutes", imgs: [{ id: 1, name: "heraa mountain", img: wall }, { id: 2, name: "Thawr mountain", img: fly }, { id: 1, name: "Maccah", img: mecca }, { id: 3, name: "Mount wall", img: thawr }, { id: 4, name: "Mount From sky", img: mount }], discription: "We take you on a spiritual journey, guiding you through the holy sites starting from Arafat with three hours and 30 minutes of spiritual exploration through the holy sites starting from Arafat with three hours and 30 minutes" },
-        { id: 3, name: "Heraa path", img: wall, duration: "2 hours and 30 minutes", imgs: [{ id: 1, name: "heraa mountain", img: mount }, { id: 2, name: "Thawr mountain", img: heraa }, { id: 3, name: "Mount wall", img: fly }, { id: 1, name: "Maccah", img: mecca }, { id: 4, name: "Mount From sky", img: thawr }], discription: "We take you on a spiritual journey, guiding you through the holy sites starting from Arafat with three hours and 30 minutes of spiritual exploration through the holy sites starting from Arafat with three hours and 30 minutes" },
-        { id: 4, name: "Heraa path", img: mount, duration: "2 hours and 30 minutes", imgs: [{ id: 1, name: "heraa mountain", img: fly }, { id: 2, name: "Thawr mountain", img: wall }, { id: 3, name: "Mount wall", img: mount }, { id: 4, name: "Mount From sky", img: thawr }, { id: 1, name: "Maccah", img: mecca }], discription: "We take you on a spiritual journey, guiding you through the holy sites starting from Arafat with three hours and 30 minutes of spiritual exploration through the holy sites starting from Arafat with three hours and 30 minutes" },
-        { id: 5, name: "Heraa path", img: fly, duration: "2 hours and 30 minutes", imgs: [{ id: 1, name: "heraa mountain", img: thawr }, { id: 2, name: "Thawr mountain", img: mount }, { id: 3, name: "Mount wall", img: wall }, { id: 4, name: "Mount From sky", img: fly }, { id: 1, name: "Maccah", img: mecca }], discription: "We take you on a spiritual journey, guiding you through the holy sites starting from Arafat with three hours and 30 minutes of spiritual exploration through the holy sites starting from Arafat with three hours and 30 minutes" },
-    ]
+
+
+
+    const [loading, setLoading] = useState(true); // State for loading indicator
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [language, setLanguage] = useState('en');  // Default language is 'en'
+    useEffect(() => {
+        setLoading(true);
+        if (typeof window !== 'undefined') {
+            setLanguage(localStorage.getItem('lang'));
+            // Define the headers with the selected language
+            const headers = {
+                lang: localStorage.getItem('lang'), // Change language dynamically based on state
+            };
+            // Fetch data from the API with Axios
+            axios.get('https://mzarapp.com/api/landing/home/packages'
+                , {
+                    headers: headers,
+                }).then(response => {
+                    setData(response.data);  // Set the response data to state
+                    setLoading(false);  // Set loading to false
+
+                })
+                .catch(error => {
+                    setError(error);  // Handle any errors
+                    console.error('Error fetching data:', error);
+                    setLoading(false)
+                });
+        }
+    }, []);  // Run this effect whenever the `language` changes
     return (
-        <div className="paths container m-auto" id='paths'>
+        <div className="paths container m-auto" id='paths' style={{direction: `${language === 'ar' ? 'rtl' : 'ltr'}`}}>
             <div className="title">
-                <h2>Mzar Paths</h2>
-                <p>Enjoy enriching trips and create everlasting memories filled with knowledge about Islamic civilization, the birthplace of revelation, and the launch of the prophetic message.</p>
+                <h2>{data?.data.title}</h2>
+                <p>{data?.data.description}</p>
             </div>
             <div className="path-swiper w-full">
                 <Swiper
@@ -66,19 +88,21 @@ export default function Paths() {
                         }
                     }}
                 >
-                    {paths.map((path) =>
+                    {data?.data.packages.map((path) =>
                         <SwiperSlide key={path.id}>
                             <div className="path-card">
                                 <div className="img-cont">
                                     <Image
-                                        src={path.img}
+                                        src={path.cover}
                                         alt="Mazar"
                                         className="path-img"
+                                        width={300}
+                                        height={300}
                                     />
                                     <div className="duration">{path.duration}</div>
                                 </div>
                                 <h3>{path.name}</h3>
-                                <p>{path.discription}</p>
+                                <p>{path.short_description}</p>
                                 <div className="small-imgs-slider w-full">
                                     <Swiper
                                         // navigation
@@ -88,9 +112,9 @@ export default function Paths() {
                                         autoplay={true}
                                         loop={true}
                                         modules={[Autoplay, Navigation, Pagination]}
-                                        
+
                                         breakpoints={{
-                                            
+
                                             640: {
                                                 slidesPerView: 4,
                                                 autoplay: false,
@@ -101,24 +125,26 @@ export default function Paths() {
                                             }
                                         }}
                                     >
-                                        {path.imgs.map((img) =>
+                                        {path.locations.map((location) =>
                                             <SwiperSlide key={path.id}>
                                                 <div className="small-swiper-img-name">
                                                     <div className="samll-img-cont">
                                                         <Image
-                                                            src={img.img}
+                                                            src={location.cover}
                                                             alt="Mazar"
+                                                            width={100}
+                                                            height={100}
                                                         />
                                                     </div>
                                                     <h6>
-                                                        {img.name}
+                                                        {location.name}
                                                     </h6>
                                                 </div>
                                             </SwiperSlide>
                                         )}
                                     </Swiper>
                                 </div>
-                                <Link href="/path" className='view-detials'>View details </Link>
+                                <Link href={`/path/${path.id}`} className='view-detials'>{language==='en'?'View Details':'عرض التفاصيل'} </Link>
                             </div>
                         </SwiperSlide>
                     )}

@@ -32,7 +32,7 @@ export default function PathInfo() {
             <div className="destinations-drid">
                 {
                     destinationsCopy.map((item) =>
-                        <div className="destination">
+                        <div className="destination" key={item.id}>
                             <div className="img-cont">
                                 <Image src={item.img} alt="Mazar"></Image>
                             </div>
