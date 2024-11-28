@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import img from '/public/iPhone.png';
+import img from '/public/iPhone.webp';
 import bg from '/public/mecca.jpg';
 import apple from '/public/apple.png';
 import google from '/public/google.png';

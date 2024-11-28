@@ -13,14 +13,17 @@ export default function Footer() { // Defining the main functional component nam
             // Define the headers with the selected language
             setLanguage(localStorage.getItem('lang'));
         }
-    }, []); 
+    }, []);
     return (
         <footer className={`${language === 'en' ? 'ltr' : 'rtl'}`}> {/* Main footer container with padding and background color */}
+            <a href="https://wa.me/+966580121025?text=Good%20Morning%20Mzar" class="fixed-what">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
             <div className="container m-auto"> {/* Container for the footer content */}
                 <div className="footer-cont">
                     <div className="copyRight">
                         <Image src={c} alt="Mazar" className="img" />
-                        <p>{language === 'en' ? 'Licensed by the Ministry of Tourism ,license number 73104705':'مرخصة من وزارة السياحة رقم الترخيص 73104705'}</p>
+                        <p>{language === 'en' ? 'Licensed by the Ministry of Tourism ,license number 73104705' : 'مرخصة من وزارة السياحة رقم الترخيص 73104705'}</p>
                     </div>
                     <div className="social">
                         <Link href={'https://x.com/mzarapp'}><i className="fa-brands fa-x-twitter"></i></Link>
