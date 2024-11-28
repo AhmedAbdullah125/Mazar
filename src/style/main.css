@@ -404,6 +404,7 @@ header .lang-btn {
   justify-content: center;
   border: 2px solid var(--sec-color);
   border-radius: 5px;
+  cursor: pointer;
 }
 header .links {
   min-width: 50%;
