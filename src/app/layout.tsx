@@ -3,9 +3,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './video-react.css';
-import Header from '@/components/header/Header';
+import NavBar from '@/components/header/NavBar';
 import Footer from '@/components/home/Footer';
 import '../style/main.css';
+import { Navigation } from 'lucide-react';
 <link rel="stylesheet" href="/css/video-react.css" />
 
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" id='root'>
       <body className="w-full" suppressHydrationWarning={true}>
-        <Header />
+        <NavBar />
         {children}
         <Footer />
       </body>
