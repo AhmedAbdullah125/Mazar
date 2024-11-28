@@ -3,8 +3,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './video-react.css';
-import Header from '../../src/components/header/Header';
-import Footer from '../../src/components/home/Footer';
+import Header from '@/components/header/Header';
+import Footer from '@/components/home/Footer';
 import '../style/main.css';
 <link rel="stylesheet" href="/css/video-react.css" />
 
