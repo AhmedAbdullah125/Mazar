@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 export default function Header() {
   const router = useRouter()
-  let [lang, setLang] = useState('');
+  let [lang, setLang] = useState('en');
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (localStorage.getItem('lang')==='ar'||localStorage.getItem('lang')==='en') {
@@ -27,7 +27,7 @@ export default function Header() {
           <Link href="/">{lang === 'en' ? 'Home' : 'الرئيسية'}</Link>
           <Link href="/#paths">{lang === 'en' ? 'Paths' : 'المسارات'}</Link>
           <Link href="/#about">{lang === 'en' ? 'About' : 'من نحن'}</Link>
-          <div className="lang-btn" onClick={
+          {/* <div className="lang-btn" onClick={
             () => {
               if (lang === 'en') {
                 localStorage.setItem('lang', 'ar');
@@ -42,7 +42,7 @@ export default function Header() {
                 router.refresh(); 
               }
             }
-          }>{lang==='ar'?'En':'ع'}</div>
+          }>{lang==='ar'?'En':'ع'}</div> */}
           <Link href="/book" className='book-link' >{lang === 'en' ? 'Book now' : 'احجز الان'}</Link>
         </div>
         {/* <div className="menu-bars">
@@ -79,7 +79,7 @@ export default function Header() {
             <Link href="/">{lang === 'en' ? 'Home' : 'الرئيسية'}</Link>
             <Link href="/#paths">{lang === 'en' ? 'Paths' : 'المسارات'}</Link>
             <Link href="/#about">{lang === 'en' ? 'About' : 'من نحن'}</Link>
-            <div className="lang-btn" onClick={
+            {/* <div className="lang-btn" onClick={
             () => {
               if (lang === 'en') {
                 localStorage.setItem('lang', 'ar');
@@ -94,7 +94,7 @@ export default function Header() {
                 router.refresh(); 
               }
             }
-          }>{lang==='ar'?'En':'ع'}</div>
+          }>{lang==='ar'?'En':'ع'}</div> */}
             <Link href="/book" className='book-link' >{lang === 'en' ? 'Book now' : 'احجز الان'}</Link>
           </div>
         </div>

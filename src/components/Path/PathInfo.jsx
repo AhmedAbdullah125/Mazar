@@ -11,7 +11,8 @@ export default function PathInfo(pathData) {
     // Your custom options
   });
   let [data,setData] = useState(pathData.data);
-  let [language, setLanguage] = useState(pathData.lang);
+  // let [language, setLanguage] = useState(pathData.lang);
+  let [language, setLanguage] = useState('en');
   console.log(language);
   
   

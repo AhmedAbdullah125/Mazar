@@ -7,6 +7,7 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/home/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../style/main.css';
+import { GoogleTagManager } from '@next/third-parties/google'
 // import { Navigation } from 'lucide-react';
 
 
@@ -22,10 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" id='root'>
+      <GoogleTagManager gtmId='GTM-WS294KJ' />
       <body className="w-full" suppressHydrationWarning={true}>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS294KJ" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
         <Header />
         <>{children}</>
-        <Footer /> 
+        <Footer />
+
       </body>
     </html>
   );

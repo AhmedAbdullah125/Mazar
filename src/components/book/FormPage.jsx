@@ -391,7 +391,7 @@ export default function FormPage(props) {
                             <ReCAPTCHA sitekey="6Lc3A4oqAAAAALKG0Ww3vyaaIdmMWIAjXIi6xvoa" onChange={onChange} />
                             <p className={`${!captchaa && visited ? 'block' : 'hidden'} captcha-text`}>Please verify that you are not a robot</p>
                         </div>
-                        <Button type="submit" className='text-xl py-4 rounded-xl min-w-32 h-13 submit'>Submit</Button>
+                        <Button type="submit" className='text-xl py-4 rounded-xl min-w-32 h-13 submit '>Submit</Button>
                     </form>
                 </Form>
             </motion.div>

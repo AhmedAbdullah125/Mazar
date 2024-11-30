@@ -5,7 +5,8 @@ import Link from 'next/link';
 export default function PathInfo(pathData) {
     let [more, setMore] = useState(false);
     let [data, setData] = useState(pathData.data);
-  let [language, setLanguage] = useState(data.lang);
+//   let [language, setLanguage] = useState(data.lang);
+  let [language, setLanguage] = useState('en');
 
     let destinations = data.locations
     let [destinationsCopy, setDestinationsCopy] = useState(destinations.slice(0, 4));

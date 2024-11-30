@@ -16,8 +16,8 @@ export default function Footer() { // Defining the main functional component nam
     }, []);
     return (
         <footer className={`${language === 'en' ? 'ltr' : 'rtl'}`}> {/* Main footer container with padding and background color */}
-            <a href="https://wa.me/+966580121025?text=Good%20Morning%20Mzar" class="fixed-what">
-                <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/+966580121025?text=Good%20Morning%20Mzar" className="fixed-what">
+                <i className="fa-brands fa-whatsapp"></i>
             </a>
             <div className="container m-auto"> {/* Container for the footer content */}
                 <div className="footer-cont">
@@ -30,7 +30,7 @@ export default function Footer() { // Defining the main functional component nam
                         <Link href={'https://www.instagram.com/mzarapp//'}><i className="fa-brands fa-instagram"></i></Link>
                         <Link href={'https://www.facebook.com/mzarapp'}><i className="fa-brands fa-facebook"></i></Link>
                         <Link href={'https://www.youtube.com/@mzarapp'}><i className="fa-brands fa-youtube"></i></Link>
-                        <Link href={'https://www.tiktok.com/@mzarapp'}><i class="fa-brands fa-tiktok"></i></Link>
+                        <Link href={'https://www.tiktok.com/@mzarapp'}><i className="fa-brands fa-tiktok"></i></Link>
                     </div>
                 </div>
             </div>
